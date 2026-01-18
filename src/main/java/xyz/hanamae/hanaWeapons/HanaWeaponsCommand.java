@@ -12,7 +12,6 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class HanaWeaponsCommand implements CommandExecutor, TabCompleter {
 
@@ -26,62 +25,83 @@ public class HanaWeaponsCommand implements CommandExecutor, TabCompleter {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        // /hw give <player> <model_data>
-        if (args.length >= 3 && args[0].equalsIgnoreCase("give")) {
-            if (!sender.hasPermission("hanaweapons.admin")) {
-                sender.sendMessage("§cYou do not have permission.");
-                return true;
-            }
-
-            Player target = Bukkit.getPlayer(args[1]);
-            if (target == null) {
-                sender.sendMessage("§cPlayer not found.");
-                return true;
-            }
-
-            int modelData;
-            try {
-                modelData = Integer.parseInt(args[2]);
-            } catch (NumberFormatException e) {
-                sender.sendMessage("§cInvalid model data ID.");
-                return true;
-            }
-
-            WeaponManager.WeaponData data = manager.getWeaponData(modelData);
-            if (data == null) {
-                sender.sendMessage("§cWeapon not found with ID: " + modelData);
-                return true;
-            }
-
-            // Create weapon
-            ItemStack item = new ItemStack(Material.NETHERITE_SWORD); // 默认材质
-            ItemMeta meta = item.getItemMeta();
-            if (meta != null) {
-                meta.setDisplayName(data.name != null ? data.name : "Hana Greatsword");
-                meta.setCustomModelData(modelData);
-                // Lore 可以在这里添加，如果 data 里有的话
-                // meta.setLore(data.lore);
-                item.setItemMeta(meta);
-            }
-
-            target.getInventory().addItem(item);
-            sender.sendMessage("§aGave " + data.name + " to " + target.getName());
-            return true;
-        }
-        
-        // Reload command
-        if (args.length == 1 && args[0].equalsIgnoreCase("reload")) {
-            if (!sender.hasPermission("hanaweapons.admin")) {
-                sender.sendMessage("§cNo permission.");
-                return true;
-            }
-            manager.loadWeapons();
-            sender.sendMessage("§aConfiguration reloaded.");
+        if (args.length == 0) {
+            sendUsage(sender);
             return true;
         }
 
-        sender.sendMessage("§eUsage: /hw give <player> <model_data> | /hw reload");
+        String subCommand = args[0].toLowerCase();
+
+        switch (subCommand) {
+            case "give":
+                return handleGive(sender, args);
+            case "reload":
+                return handleReload(sender);
+            default:
+                sendUsage(sender);
+                return true;
+        }
+    }
+
+    private boolean handleGive(CommandSender sender, String[] args) {
+        if (!sender.hasPermission("hanaweapons.admin")) {
+            sender.sendMessage("§cYou do not have permission.");
+            return true;
+        }
+
+        if (args.length < 3) {
+            sender.sendMessage("§cUsage: /hw give <player> <model_data>");
+            return true;
+        }
+
+        Player target = Bukkit.getPlayer(args[1]);
+        if (target == null) {
+            sender.sendMessage("§cPlayer not found.");
+            return true;
+        }
+
+        int modelData;
+        try {
+            modelData = Integer.parseInt(args[2]);
+        } catch (NumberFormatException e) {
+            sender.sendMessage("§cInvalid model data ID.");
+            return true;
+        }
+
+        WeaponManager.WeaponData data = manager.getWeaponData(modelData);
+        if (data == null) {
+            sender.sendMessage("§cWeapon not found with ID: " + modelData);
+            return true;
+        }
+
+        giveWeapon(target, data, modelData);
+        sender.sendMessage("§aGave " + data.name + " to " + target.getName());
         return true;
+    }
+
+    private void giveWeapon(Player target, WeaponManager.WeaponData data, int modelData) {
+        ItemStack item = new ItemStack(Material.NETHERITE_SWORD);
+        ItemMeta meta = item.getItemMeta();
+        if (meta != null) {
+            meta.setDisplayName(data.name != null ? data.name : "Hana Greatsword");
+            meta.setCustomModelData(modelData);
+            item.setItemMeta(meta);
+        }
+        target.getInventory().addItem(item);
+    }
+
+    private boolean handleReload(CommandSender sender) {
+        if (!sender.hasPermission("hanaweapons.admin")) {
+            sender.sendMessage("§cNo permission.");
+            return true;
+        }
+        manager.loadWeapons();
+        sender.sendMessage("§aConfiguration reloaded.");
+        return true;
+    }
+
+    private void sendUsage(CommandSender sender) {
+        sender.sendMessage("§eUsage: /hw give <player> <model_data> | /hw reload");
     }
 
     @Override
@@ -93,9 +113,7 @@ public class HanaWeaponsCommand implements CommandExecutor, TabCompleter {
             return null; // Player list
         }
         if (args.length == 3 && args[0].equalsIgnoreCase("give")) {
-            // Suggest known model data IDs
-            // 这里可以改进为从 manager 获取所有 ID
-            return List.of("11451"); 
+            return List.of("11451");
         }
         return new ArrayList<>();
     }

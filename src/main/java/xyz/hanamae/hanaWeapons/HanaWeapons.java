@@ -5,6 +5,7 @@ import org.bukkit.event.Listener;
 
 public class HanaWeapons extends JavaPlugin {
     private WeaponManager weaponManager;
+    private WeaponRegistry weaponRegistry;
 
     // Old onCommand method removed to use HanaWeaponsCommand
     /* 
@@ -25,7 +26,9 @@ public class HanaWeapons extends JavaPlugin {
         this.weaponManager = new WeaponManager(this);
         this.weaponManager.loadWeapons(); // 关键修复：启动时加载配置
         
-        getServer().getPluginManager().registerEvents(new WeaponListener(this, weaponManager), this);
+        this.weaponRegistry = new WeaponRegistry(this, weaponManager);
+        
+        getServer().getPluginManager().registerEvents(new WeaponListener(this, weaponRegistry), this);
         
         // Register command
         getCommand("hw").setExecutor(new HanaWeaponsCommand(this, weaponManager));
