@@ -1,0 +1,40 @@
+settings:
+  # 架势条 UI 的默认长度 (个格子)
+  # 可以在 weapons.yml 中通过 posture_bar_length 覆盖
+  bar_length: 20
+  
+  # 默认的怪物/未配置实体的穿甲系数
+  default_apc: 1.0
+
+# 实体和投掷物的穿甲系数配置
+# 这里的名字必须对应 Bukkit 的 EntityType 枚举 (大写)
+entities:
+  # === Boss级 ===
+  WARDEN: 5.0        # 监守者 (一击破防)
+  ENDER_DRAGON: 5.0  # 末影龙
+  WITHER: 4.0        # 凋灵
+
+  # === 强力怪物 ===
+  CREEPER: 3.0       # 苦力怕爆炸
+  RAVAGER: 3.5       # 劫掠兽冲撞
+  IRON_GOLEM: 3.0    # 铁傀儡
+  VINDICATOR: 2.5    # 卫道士 (斧头)
+  PIGLIN_BRUTE: 2.5  # 猪灵蛮兵 (斧头)
+  HOGLIN: 2.0        # 疣猪兽
+
+  # === 投掷物 ===
+  TRIDENT: 3.5       # 三叉戟 (重型投掷)
+  ARROW: 1.5         # 普通箭矢 (易防御)
+  SPECTRAL_ARROW: 1.5
+  FIREBALL: 2.5      # 恶魂火球
+  DRAGON_FIREBALL: 3.0 # 末影龙火球
+
+# 实体攻击反馈配置
+# 配置哪些实体攻击被防御时会产生特殊效果 (如: 岩浆粒子)
+# 默认: true (所有实体都会产生粒子)
+# 如果设置为 false，则该实体攻击被防御时不会产生粒子
+entity_impact_effects:
+  ZOMBIE: true
+  SKELETON: true
+  SPIDER: true
+  # PLAYER: true

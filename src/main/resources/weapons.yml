@@ -1,0 +1,343 @@
+weapons:
+  "11451":
+    display_name: "§f§l大剑"
+    material: NETHERITE_SWORD
+    custom_model_data: 11451
+    block_reduction: 0.5 # 看这里看这里！！ 这个已经不用了 但是保留了下来 怕以后会用到
+    defense_coefficient: 2.0
+    armor_penetration: 2.0
+    posture_regen_rate: 2.5
+    posture_bar_length: 20
+    attack_range: 3.3 # 技能攻击距离
+    skill_pose_model: 1145101 # 对应资源包里的 CustomModelData 编号 (例如大剑ID 11451 -> 姿态ID 1145101)
+    
+    mechanics:
+      two_handed: true
+      blocking: true
+      parry: false
+      skill: SQUARE_OFF
+    
+    effects:
+      block_sounds:
+        - BLOCK_ANVIL_LAND
+      block_pitch_min: 1.0
+      block_pitch_max: 1.3
+      block_particle: LAVA # 如果留空或删掉这行，就不会有受击粒子
+      block_particle_count: 5
+      block_particle_spread: 0.5
+
+    lore:
+      - "§7比平常大了一圈的大剑"
+      - "§7"
+      - "§7很沉重，基本上以双手持剑使用。"
+      - "§7除了砍劈攻击，还可以突刺攻击，"
+      - "§7是便于应付各种状况的大剑。"
+      - "§7"
+      - "§f战技：准备架式"
+      - "§7举起剑与地面平行，接着使出攻击的战技。"
+      - "§7轻攻击能使出由下而上，突破防御的斩击。"
+      - "§7重攻击能向前冲刺、突刺攻击。"
+      - "§7"
+      - "§f架势回复：§6 2.5"
+      - "§f架势条长度：§6 20"
+    one_handed:
+      attack_speed: -2.8
+      damage: 11
+      movement_speed: -0.10
+    two_handed:
+      attack_speed: -2.8
+      damage: 13.0
+      movement_speed: -0.12
+
+  "11452":
+    display_name: "§c§l环印骑士直剑"
+    material: NETHERITE_SWORD
+    custom_model_data: 11452
+    block_reduction: 0.3
+    defense_coefficient: 0.0
+    armor_penetration: 1.5
+    
+    mechanics:
+      two_handed: true
+      blocking: false
+
+    lore:
+      - "§7环印骑士持有的黑色直剑。"
+      - "§7前人的武器经过深渊淬炼，"
+      - "§7因此带有些许生命。"
+      - "§7"
+      - "§7据说也因为如此，诸神才会将剑与其主"
+      - "§7一同设下火的封印。"
+      - "§7"
+      - "§7战技：余火"
+      - "§7拿起已不见当时风光的剑，摆出架势，"
+      - "§7暂时取回它曾辉煌的模样以及火的力量。"
+      - "§7准备攻击后，可以接续普通攻击与重攻击。"
+    one_handed:
+      attack_speed: -2.4
+      damage: 8
+      movement_speed: 0.0
+    two_handed:
+      attack_speed: -2.4
+      damage: 10.0
+      movement_speed: -0.05
+
+  "11453":
+    display_name: "§f格挡匕首"
+    material: IRON_SWORD
+    custom_model_data: 11453
+    block_reduction: 0.2
+    defense_coefficient: 0.5 # 防御
+    armor_penetration: 1 # 穿透
+    posture_regen_rate: 3.5 # 回复架势
+    posture_bar_length: 10 # 架势条
+    attack_range: 2.5
+    
+    mechanics:
+      two_handed: false
+      blocking: true
+      parry: true
+    parry_window: 200 # 格挡窗口
+    parry_cooldown: 1200 # 弹反冷却
+    parry_pitch_min: 0.5
+    parry_pitch_max: 0.7
+
+    effects:
+      block_sounds:
+        - ITEM_ARMOR_EQUIP_IRON
+        - BLOCK_CHAIN_HIT
+      block_pitch_min: 1.0
+      block_pitch_max: 1.3
+      block_particle: LAVA
+      block_particle_count: 3
+      block_particle_spread: 0.3
+      
+      parry_sounds:
+        - BLOCK_ANVIL_LAND
+      parry_pitch_min: 1.8
+      parry_pitch_max: 2.0
+      parry_particle: SWEEP_ATTACK
+      parry_particle_count: 1
+      parry_particle_spread: 0.1
+    
+    parry_debuffs:
+      WEAKNESS:
+        duration: 80
+        amplifier: 0
+      SLOWNESS:
+        duration: 80
+        amplifier: 0
+
+    lore:
+      - "§7有大护手的弯曲短剑。"
+      - "§7"
+      - "§7以使用格挡为目的做成的短剑，"
+      - "§7基本上是取代盾，以左手拿取。"
+      - "§7"
+      - "§f战技：格挡"
+      - "§7算准时机、架开攻击后，"
+      - "§7可以使敌人失衡。"
+      - "§7不论用左右手装备都能使用的战技。"
+      - "§7"
+      - "§f架势回复：§6 3.5"
+      - "§f架势条长度：§6 8"
+      
+    one_handed:
+      attack_speed: 2.0
+      damage: 4
+      movement_speed: 0.0
+    two_handed:
+      attack_speed: -2.0
+      damage: 4
+      movement_speed: 0.0
+
+  "11454":
+    display_name: "§f骑士盾"
+    material: SHIELD
+    custom_model_data: 11454
+    block_reduction: 1 
+    defense_coefficient: 2.5
+    armor_penetration: 1.0
+    posture_regen_rate: 2.0
+    posture_bar_length: 25
+    
+    mechanics:
+      two_handed: false
+      blocking: true
+      parry: false
+    
+    effects:
+      block_sound: BLOCK_ANVIL_PLACE  # 金属盾牌，打铁声
+      block_sound_pitch: 1.0 # 稍微低一点，体现盾牌厚度
+      block_particle: LAVA # 金属火花
+      block_particle_count: 5
+      block_particle_spread: 0.5
+
+    lore:
+      - "§7下级骑士的盾。"
+      - "§7正统中型盾。"
+      - "§7"
+      - "§7中型盾是最为标准的盾牌，"
+      - "§7拥有减伤率、抵挡力，与重量的良好平衡。"
+      - "§7"
+      - "§f架势回复：§6 2.0"
+      - "§f架势条长度：§6 25"
+    one_handed:
+      attack_speed: -3.0
+      damage: 2
+      movement_speed: -0.10
+    two_handed:
+      attack_speed: -3.0
+      damage: 2
+      movement_speed: -0.10
+
+  "11455":
+    display_name: "§f长剑"
+    material: DIAMOND_SWORD
+    custom_model_data: 11455
+    block_reduction: 0.3
+    defense_coefficient: 1.0
+    armor_penetration: 1.5
+    posture_regen_rate: 3.0
+    posture_bar_length: 12
+    
+    mechanics:
+      two_handed: true
+      blocking: true
+      parry: false
+      skill: SQUARE_OFF
+
+    lore:
+      - "§7能使出通用性高的普通属性攻击，"
+      - "§7也能使出攻击力高的突刺属性攻击，"
+      - "§7是平衡性极佳的武器。"
+      - "§7"
+      - "§f战技：准备架式"
+      - "§7举起剑与地面平行，接着使出攻击的战技。"
+      - "§7轻攻击能使出由下而上，突破防御的斩击。"
+      - "§7重攻击能向前冲刺、突刺攻击。"
+      # - "§f架势回复：§6 3.0"
+      # - "§f架势条长度：§6 12"
+      
+    one_handed:
+      attack_speed: -2.4 # 1.6 in vanilla terms (4 - 2.4 = 1.6)
+      damage: 8
+      movement_speed: 0.0
+    two_handed:
+      attack_speed: -2.4
+      damage: 9
+      movement_speed: -0.05
+
+  "11456":
+    display_name: "§b月光大剑"
+    material: NETHERITE_SWORD
+    custom_model_data: 11456
+    block_reduction: 0.5
+    defense_coefficient: 2.2
+    armor_penetration: 2.0
+    posture_regen_rate: 2.2
+    posture_bar_length: 22
+    attack_range: 3.3
+    
+    mechanics:
+      two_handed: true
+      blocking: true
+      parry: false
+
+    effects:
+      block_sounds:
+        - BLOCK_GLASS_BREAK # 月光质感
+      block_pitch_min: 0.8
+      block_pitch_max: 1.2
+      block_particle: SOUL_FIRE_FLAME
+      block_particle_count: 5
+      block_particle_spread: 0.5
+
+    lore:
+      - "§7拥有如月光般闪耀剑身的大剑。"
+      - "§7至今已无人提起的远古传承如是说，"
+      - "§7巨大白色的身影造就了这把剑。"
+      - "§7重攻击时可解放力量，"
+      - "§7成为月光光波射出。"
+      - "§7"
+      - "§f架势回复：§6 2.2"
+      - "§f架势条长度：§6 22"
+      
+    one_handed:
+      attack_speed: -3.0
+      damage: 10.0
+      movement_speed: -0.1
+    two_handed:
+      attack_speed: -3.0
+      damage: 12.0
+      movement_speed: -0.15
+
+  "11457":
+    display_name: "§e§l猎杀游魂大剑"
+    material: NETHERITE_SWORD
+    custom_model_data: 11457
+    block_reduction: 0.5
+    defense_coefficient: 2
+    armor_penetration: 2
+    posture_regen_rate: 2.5
+    posture_bar_length: 18
+    attack_range: 3.3
+    
+    mechanics:
+      two_handed: true
+      blocking: true
+      parry: false
+      skill: SQUARE_OFF
+
+    effects:
+      block_sounds:
+        - BLOCK_ANVIL_LAND
+      block_pitch_min: 1.0
+      block_pitch_max: 1.2
+      block_particle: LAVA
+      block_particle_count: 3
+      block_particle_spread: 0.3
+
+    slayer:
+      groups:
+        - UNDEAD
+      types: []
+      multiplier: 1.3
+      
+    combo:
+      enabled: true
+      reset_time: 1500 # 1.5秒不攻击则重置
+      steps:
+        - damage_mult: 1.0
+          pose_model_add: 1
+          next_step: 1 # Go to Step 2 (Index 1)
+        - damage_mult: 1.15
+          pose_model_add: 2
+          next_step: 2 # Go to Step 3 (Index 2)
+        - damage_mult: 1.2
+          pose_model_add: 3
+          next_step: 3 # Go to Step 4 (Index 3)
+        - damage_mult: 1.25
+          pose_model_add: 4
+          next_step: 0 # Go back to Step 1 (Index 0)
+
+    lore:
+      - "§7据说是面具骑士使用已久的大剑。"
+      - "§7与深刻在游魂们脑海里的恐怖回忆有关。"
+      - "§7"
+      - "§7对游魂的效果特别显著。"
+      - "§7"
+      - "§7这是过去米勒正规骑士受赏的剑，"
+      - "§7据说以双手持剑能见识到特有的剑术。"
+      - "§7"
+      - "§f架势回复：§6 2.4"
+      - "§f架势条长度：§6 20"
+      
+    one_handed:
+      attack_speed: -2.6 # 稍微快一点的大剑
+      damage: 9.0
+      movement_speed: -0.08
+    two_handed:
+      attack_speed: -2.6
+      damage: 11.0
+      movement_speed: -0.12

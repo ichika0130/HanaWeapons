@@ -1,0 +1,15 @@
+{
+    "parent": "minecraft:item/handheld",
+    "textures": {
+        "layer0": "minecraft:item/netherite_sword"
+    },
+    "overrides": [
+        { "predicate": { "custom_model_data": 11451 }, "model": "minecraft:item/custom/greatsword" },
+        { "predicate": { "custom_model_data": 1145101 }, "model": "minecraft:item/custom/greatsword_skill_pose" },
+        { "predicate": { "custom_model_data": 11457 }, "model": "minecraft:item/custom/hollowslayer" },
+        { "predicate": { "custom_model_data": 1145701 }, "model": "minecraft:item/custom/hollowslayer_pose1" },
+        { "predicate": { "custom_model_data": 1145702 }, "model": "minecraft:item/custom/hollowslayer_pose2" },
+        { "predicate": { "custom_model_data": 1145703 }, "model": "minecraft:item/custom/hollowslayer_pose3" },
+        { "predicate": { "custom_model_data": 1145704 }, "model": "minecraft:item/custom/hollowslayer_pose4" }
+    ]
+}

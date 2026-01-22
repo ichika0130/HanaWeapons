@@ -1,0 +1,68 @@
+# ==========================================
+# HanaWeapons 音效参考列表
+# ==========================================
+# 这些音效可以在 weapons.yml 的 block_sound 和 parry_sound 中使用
+# 格式为: SOUND_NAME
+
+# === 金属与防御类 (最适合格挡/弹反) ===
+ITEM_SHIELD_BLOCK             # 原版盾牌格挡声 (沉闷的木头/皮革声)
+ITEM_SHIELD_BREAK             # 盾牌破碎声 (清脆的碎裂声)
+BLOCK_ANVIL_LAND              # 铁砧落地 (非常响亮沉重的金属撞击声，适合弹反)
+BLOCK_ANVIL_PLACE             # 放置铁砧 (较短的金属声)
+BLOCK_ANVIL_USE               # 使用铁砧 (清脆的敲击声，类似打铁)
+BLOCK_ANVIL_HIT               # 敲击铁砧 (高频金属声)
+BLOCK_ANVIL_DESTROY           # 铁砧损坏 (极其刺耳的金属破碎声)
+BLOCK_METAL_HIT               # 敲击金属块 (短促的金属声)
+BLOCK_METAL_PLACE             # 放置金属块
+BLOCK_CHAIN_HIT               # 敲击锁链 (哗啦声)
+BLOCK_LANTERN_HIT             # 敲击灯笼 (清脆的玻璃/金属声)
+BLOCK_BELL_USE                # 敲钟 (非常清脆悠长的钟声，适合特殊弹反)
+BLOCK_NOTE_BLOCK_BELL         # 音符盒: 钟声 (轻灵)
+BLOCK_NOTE_BLOCK_CHIME        # 音符盒: 风铃 (高音)
+BLOCK_NOTE_BLOCK_IRON_XYLOPHONE # 音符盒: 铁琴 (金属质感)
+
+# === 攻击与打击类 ===
+ENTITY_PLAYER_ATTACK_CRIT     # 暴击声 (嗖的一声)
+ENTITY_PLAYER_ATTACK_KNOCKBACK # 击退声 (沉重的挥击)
+ENTITY_PLAYER_ATTACK_STRONG   # 强力攻击
+ENTITY_PLAYER_ATTACK_SWEEP    # 横扫攻击 (风声)
+ENTITY_PLAYER_ATTACK_WEAK     # 弱攻击
+ENTITY_IRON_GOLEM_ATTACK      # 铁傀儡攻击 (沉重的挥舞声)
+ENTITY_ZOMBIE_ATTACK_IRON_DOOR # 僵尸敲铁门 (嘈杂的金属撞击)
+ENTITY_ARROW_HIT_PLAYER       # 箭矢射中玩家 (短促的噗声)
+
+# === 魔法与特效类 ===
+ENTITY_EXPERIENCE_ORB_PICKUP  # 捡起经验球 (清脆的叮声)
+ENTITY_PLAYER_LEVELUP         # 升级音效 (经典的高音)
+BLOCK_BEACON_ACTIVATE         # 信标激活 (科幻感的能量声)
+BLOCK_BEACON_POWER_SELECT     # 信标选择 (短促能量声)
+BLOCK_ENCHANTMENT_TABLE_USE   # 附魔台使用 (魔法书翻页声)
+BLOCK_PORTAL_TRIGGER          # 传送门触发
+ENTITY_ENDER_EYE_DEATH        # 末影之眼破碎 (爆裂声)
+ENTITY_FIREWORK_ROCKET_BLAST  # 烟花爆炸
+ENTITY_GENERIC_EXPLODE        # 爆炸声
+ENTITY_LIGHTNING_BOLT_THUNDER # 雷声
+BLOCK_RESPAWN_ANCHOR_CHARGE   # 重生锚充能 (逐渐升高的能量声)
+BLOCK_CONDUIT_ACTIVATE        # 潮涌核心激活 (水下魔法声)
+
+# === 物品与装备类 ===
+ITEM_ARMOR_EQUIP_CHAIN        # 穿戴锁链甲 (哗啦声)
+ITEM_ARMOR_EQUIP_DIAMOND      # 穿戴钻石甲 (坚硬摩擦声)
+ITEM_ARMOR_EQUIP_GENERIC      # 通用穿戴声
+ITEM_ARMOR_EQUIP_GOLD         # 穿戴金甲
+ITEM_ARMOR_EQUIP_IRON         # 穿戴铁甲 (金属摩擦)
+ITEM_ARMOR_EQUIP_LEATHER      # 穿戴皮甲 (皮革摩擦)
+ITEM_ARMOR_EQUIP_NETHERITE    # 穿戴下界合金 (低沉厚重)
+ITEM_TRIDENT_HIT              # 三叉戟击中
+ITEM_TRIDENT_RETURN           # 三叉戟飞回
+ITEM_TRIDENT_THROW            # 三叉戟投掷
+ITEM_TRIDENT_THUNDER          # 三叉戟引雷
+
+# === 其他有趣的音效 ===
+UI_BUTTON_CLICK               # 按钮点击
+UI_TOAST_CHALLENGE_COMPLETE   # 挑战完成 (也是一种提示音)
+ENTITY_VILLAGER_NO            # 村民: 不 (哼声)
+ENTITY_VILLAGER_YES           # 村民: 是 (哈声)
+ENTITY_WITCH_DRINK            # 女巫喝药
+ENTITY_ZOMBIE_INFECT          # 僵尸感染 (湿润的转换声)
+BLOCK_GLASS_BREAK             # 玻璃破碎 (清脆)
