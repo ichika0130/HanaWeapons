@@ -1,0 +1,9 @@
+translations:
+  en:
+    item.hana_great_sword: §6§lGreat Sword
+    category.hanaweapons.name: Hana Weapons
+    category.hanaweapons.lore: Hana's custom weapons
+  zh_cn:
+    item.hana_great_sword: §6§l大剑
+    category.hanaweapons.name: Hana武器
+    category.hanaweapons.lore: Hanamae的自定义武器

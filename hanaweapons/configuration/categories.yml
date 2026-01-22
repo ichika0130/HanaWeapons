@@ -1,0 +1,9 @@
+categories:
+  hanaweapons:default:
+    priority: 1
+    name: <!i><#FF69B4><l10n:category.hanaweapons.name>
+    lore:
+      - <!i><gray><l10n:category.hanaweapons.lore>
+    icon: hanaweapons:great_sword
+    list:
+      - hanaweapons:great_sword

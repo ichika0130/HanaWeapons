@@ -1,0 +1,149 @@
+items:
+  # ==========================================
+  # 如何添加新物品 (How to add new items)
+  # ==========================================
+  #
+  # 格式示例 (Example Format):
+  #
+  # hanaweapons:item_id:                # 物品唯一ID (Unique Item ID)
+  #   material: iron_sword              # 原版材质 (Vanilla Material)
+  #   custom-model-data: 10001          # 自定义模型数据 (Custom Model Data)
+  #   settings:
+  #     tags: ["hanaweapons:tools"]     # 标签 (Tags)
+  #   data:
+  #     item-name: <!i>My Custom Item   # 物品名称 (Item Name)
+  #     lore:                           # 物品描述 (Lore)
+  #       - "This is a custom item"
+  #   model:                            # 模型配置 (Model Configuration)
+  #     type: minecraft:model
+  #     path: minecraft:item/custom/my_model
+  #
+  # ==========================================
+
+  hanaweapons:great_sword:
+    material: netherite_sword
+    custom-model-data: 11451
+    settings:
+      tags:
+        - hanaweapons:hana_sword
+    data:
+      item-name: <!i><l10n:item.hana_great_sword>
+      tooltip-style: minecraft:hana
+      # block_reduction: 0.5
+      # one_handed: { attack_speed: -2.5, damage: 11 }
+      # two_handed: { attack_speed: -2.5, damage: 13.0 }
+    model:
+      type: minecraft:select
+      property: minecraft:display_context
+      cases:
+        - when:
+            - firstperson_lefthand
+            - thirdperson_lefthand
+          model:
+            type: minecraft:model
+            path: minecraft:item/custom/empty
+      fallback:
+        type: minecraft:model
+        path: minecraft:item/custom/greatsword
+
+  hanaweapons:greatsword_skill_pose:
+    material: netherite_sword
+    custom-model-data: 1145101
+    settings:
+      tags:
+        - hanaweapons:hana_sword
+    data:
+      item-name: "Greatsword Skill Pose"
+    model:
+      type: minecraft:model
+      path: minecraft:item/custom/greatsword_skill_pose
+
+  hanaweapons:hollowslayer:
+    material: netherite_sword
+    custom-model-data: 11457
+    settings:
+      tags:
+        - hanaweapons:hana_sword
+    data:
+      item-name: "Hollowslayer Greatsword"
+    model:
+      type: minecraft:model
+      path: minecraft:item/custom/hollowslayer
+
+  hanaweapons:hollowslayer_pose1:
+    material: netherite_sword
+    custom-model-data: 1145701
+    settings:
+      tags:
+        - hanaweapons:hana_sword
+    data:
+      item-name: "Hollowslayer Pose 1"
+    model:
+      type: minecraft:model
+      path: minecraft:item/custom/hollowslayer_pose1
+
+  hanaweapons:hollowslayer_pose2:
+    material: netherite_sword
+    custom-model-data: 1145702
+    settings:
+      tags:
+        - hanaweapons:hana_sword
+    data:
+      item-name: "Hollowslayer Pose 2"
+    model:
+      type: minecraft:model
+      path: minecraft:item/custom/hollowslayer_pose2
+
+  hanaweapons:hollowslayer_pose3:
+    material: netherite_sword
+    custom-model-data: 1145703
+    settings:
+      tags:
+        - hanaweapons:hana_sword
+    data:
+      item-name: "Hollowslayer Pose 3"
+    model:
+      type: minecraft:model
+      path: minecraft:item/custom/hollowslayer_pose3
+
+  hanaweapons:hollowslayer_pose4:
+    material: netherite_sword
+    custom-model-data: 1145704
+    settings:
+      tags:
+        - hanaweapons:hana_sword
+    data:
+      item-name: "Hollowslayer Pose 4"
+    model:
+      type: minecraft:model
+      path: minecraft:item/custom/hollowslayer_pose4
+
+  hanaweapons:empty_placeholder:
+    material: netherite_sword
+    custom-model-data: 11400
+    settings: { tags: [] }
+    data: { item-name: "Empty Placeholder" }
+    model:
+      type: minecraft:model
+      path: minecraft:item/custom/empty
+
+recipes:
+  # ==========================================
+  # 如何添加新配方 (How to add new recipes)
+  # ==========================================
+  #
+  # hanaweapons:item_id:
+  #   type: shaped                      # 配方类型: shaped, shapeless, etc.
+  #   category: equipment
+  #   pattern:
+  #     - " A "
+  #     - " A "
+  #     - " B "
+  #   ingredients:
+  #     A: minecraft:iron_ingot
+  #     B: minecraft:stick
+  #   result:
+  #     id: hanaweapons:item_id
+  #     count: 1
+  #
+  # ==========================================
